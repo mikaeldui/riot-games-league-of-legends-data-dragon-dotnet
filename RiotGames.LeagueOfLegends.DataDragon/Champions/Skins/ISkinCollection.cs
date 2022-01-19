@@ -1,16 +1,14 @@
 ﻿namespace RiotGames.LeagueOfLegends.DataDragon
 {
-    public interface ISkinCollection<T> : IDataDragonObject
+    public interface ISkinCollection<T> : IChampionCollection<T>, IDataDragonObject
     {
-        public T this[Skin skin] { get; }
-
-        /// <summary>
-        /// Doesn't accept the skin name "default" for obvious reasons.
-        /// </summary>
-        public T this[string skinName] { get; }
-
         public T this[int skinId] { get; }
 
-        public T this[ISkinId skin] { get; }
+        public T this[ISkinId skin] => this[skin.SkinId];
+    }
+
+    public interface ISkinDictionary<T> : ISkinCollection<T>, IDataDragonObject
+    {
+        public T this[Skin skin] => this[skin.Number];
     }
 }

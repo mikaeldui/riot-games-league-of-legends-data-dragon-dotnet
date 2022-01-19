@@ -4,25 +4,21 @@ using System.Text;
 
 namespace RiotGames.LeagueOfLegends.DataDragon
 {
-    public partial struct Champion : IChampionId, IDataDragonObject
+    public partial struct Champion : IChampionId, IChampionKey, IDataDragonObject
     {
-        public ushort Id { get; set; }
+        public string Id { get; set; }
+
+        public ushort Key { get; set; }
 
         public string Name { get; set; }
 
-        ushort IChampionId.ChampionId { get => Id; set => Id = value; }
 
-        public static explicit operator Champion(ushort championId)
-        {
-            return FromId(championId);
-        }
+        public static explicit operator Champion(ushort championKey) => FromKey(championKey);
 
-        public static explicit operator Champion(string championName)
-        {
-            return FromName(championName);
-        }
+        public static explicit operator Champion(string championName) => FromName(championName);
 
-        public static partial Champion FromId(ushort championId);
+        public static partial Champion FromKey(ushort championKey);
+
         public static partial Champion FromName(string championName);
 
         //public static readonly Champion Sona;

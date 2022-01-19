@@ -17,8 +17,6 @@ namespace RiotGames.LeagueOfLegends.DataDragon
             RequestHandler = requestHandler ?? throw new ArgumentNullException(nameof(requestHandler));
         }
 
-        public static DataDragon OpenDirectory(string path) => new DataDragon(path);
-
         private DataDragonImages? _images;
 
         public DataDragonImages Images
@@ -31,37 +29,29 @@ namespace RiotGames.LeagueOfLegends.DataDragon
                 return _images;
             }
         }
-    }
 
-    public partial class DataDragonImages
-    {
-        public ChampionImagesCollection Champions
+        private DataDragonChampions? _champions;
+        public DataDragonChampions Champions
         {
-            get; set;
+            get
+            {
+                if (_champions == null)
+                    _champions = new DataDragonChampions(this);
+
+                return _champions;
+            }
         }
 
-        public DataDragonRuneImages Runes
-        {
-            get;set;
-        }
+        public static DataDragon OpenDirectory(string path) => new DataDragon(path);
     }
 
-    public partial class ChampionImages
+    public class DataDragonChampions
     {
-        private string _championName;
-        private ChampionImagesCollection _championImagesCollection;
-        internal ChampionImages(string championName, ChampionImagesCollection championImagesCollection)
+        private readonly DataDragon _dataDragon;
+
+        public DataDragonChampions(DataDragon dataDragon)
         {
-            _championName = championName;
-            _championImagesCollection = championImagesCollection;
+            this._dataDragon = dataDragon;
         }
-
-        public async Task<Stream> GetIconAsync() => await _championImagesCollection.Icons[_championName];
-        public async ISkinCollection<Task<Stream>>
-    }
-
-    public partial class DataDragonRuneImages
-    {
-
     }
 }
