@@ -14,8 +14,9 @@
     <PackageReadmeFile>README.md</PackageReadmeFile>
     <PackageIcon>RiotGames.LeagueOfLegends.DataDragon.png</PackageIcon>
     <RepositoryUrl>https://github.com/mikaeldui/riot-games-league-of-legends-data-dragon-dotnet</RepositoryUrl>
-    <PackageTags></PackageTags>
+    <PackageTags>LeagueOfLegends; DataDragon; LeagueOfLegendsDataDragon; RiotGames; LoL; LoLDataDragon; DD, LoLDD</PackageTags>
     <PackageLicenseExpression>Unlicense</PackageLicenseExpression>
+    <AssemblyName>MikaelDui.RiotGames.LeagueOfLegends.DataDragon</AssemblyName>
   </PropertyGroup>
 
   <ItemGroup>
@@ -31,6 +32,11 @@
 
   <ItemGroup>
     <PackageReference Include="MikaelDui.Extensions" Version="*" />
+    <PackageReference Include="MikaelDui.RiotGames.LeagueOfLegends.Core" Version="1.0.1" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="Collections\" />
   </ItemGroup>
 
 </Project>
