@@ -42,13 +42,13 @@ The repo description must be manually changed afterwards since the workflow does
 Thanks to [Liam Gulliver](https://github.com/lgulliver) for his great [tutorial](https://lgulliver.github.io/dynamically-generate-projects-with-github-templates-and-actions/).
 
 <!--
-# {{ProjectName}}
-[![.NET]({{RepositoryUrl}}/actions/workflows/dotnet.yml/badge.svg)]({{RepositoryUrl}}/actions/workflows/dotnet.yml)
-[![CodeQL Analysis]({{RepositoryUrl}}/actions/workflows/codeql-analysis.yml/badge.svg)]({{RepositoryUrl}}/actions/workflows/codeql-analysis.yml)
+# RiotGames.LeagueOfLegends.DataDragon
+[![.NET](https://github.com/mikaeldui/riot-games-league-of-legends-data-dragon-dotnet/actions/workflows/dotnet.yml/badge.svg)](https://github.com/mikaeldui/riot-games-league-of-legends-data-dragon-dotnet/actions/workflows/dotnet.yml)
+[![CodeQL Analysis](https://github.com/mikaeldui/riot-games-league-of-legends-data-dragon-dotnet/actions/workflows/codeql-analysis.yml/badge.svg)](https://github.com/mikaeldui/riot-games-league-of-legends-data-dragon-dotnet/actions/workflows/codeql-analysis.yml)
 
 This NuGet package is really awesome!
 
 You can install it using the following **.NET CLI** command:
 
-    dotnet add package {{Prefix}}.{{ProjectName}} --version *
+    dotnet add package MikaelDui.RiotGames.LeagueOfLegends.DataDragon --version *
 -->
